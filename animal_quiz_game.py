@@ -11,7 +11,6 @@ questions = ["Which bear lives at the North Pole? ",
 
 answers = ['polar bear', 'cheetah', 'blue whale']
 
-
 def check_guess(guess, answer):
     global score
     global attempt
