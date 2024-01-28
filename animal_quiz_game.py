@@ -1,6 +1,8 @@
 import streamlit as st
 
 score = 0
+attempt = 0
+
 st.header('Guess the Animal!')
 
 questions = ["Which bear lives at the North Pole? ", 
@@ -12,30 +14,32 @@ answers = ['polar bear', 'cheetah', 'blue whale']
 
 def check_guess(guess, answer):
     global score
-    still_guessing = True
-    attempt = 0
+    global attempt
+   
     
-    while still_guessing and attempt < len(answers):
-        if guess.lower() == answer.lower():
-            st.success("Correct answer")
-            score = score + 1
-            still_guessing = False
-        else:
-            if attempt < (len(answers)):
-                st.warning("Sorry wrong answer. Try again")
-            attempt = attempt + 1
+    if guess.lower() == answer.lower():
+        st.success("Correct answer")
+        score = score + 1
+        
+    else:
+        
+        st.warning("Sorry wrong answer. Try again")
+        attempt = attempt + 1
         
            
+for i, question in enumerate(questions):
 
-guess = st.text_input(questions[0])   
+    guess = st.text_input(question)   
 
-if guess:
-    check_guess(guess, answers[0])
-    
-if (score/len(questions))*100 >= 80:
-    st.info("\nCongratulations you have successfully passed the test")
-else:
-    st.warning("Sorry, you have failed the test")
+    if guess:
+        check_guess(guess, answers[i])
 
-st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
+if st.button("Check Results!"):
+
+    if (score/len(questions))*100 >= 80:
+        st.info("\nCongratulations you have successfully passed the test")
+    else:
+        st.warning("Sorry, you have failed the test")
+
+    st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
 
