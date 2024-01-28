@@ -21,24 +21,26 @@ def check_guess(guess, answer):
         score = score + 1
         
     else:
-        
         st.warning("Sorry wrong answer. Try again")
         attempt = attempt + 1
         
-           
-for i, question in enumerate(questions):
+def play_game():        
+    for i, question in enumerate(questions):
 
-    guess = st.text_input(question)   
+        guess = st.text_input(question)   
 
-    if guess:
-        check_guess(guess, answers[i])
+        if guess:
+            check_guess(guess, answers[i])
+    check_results()
 
-if st.button("Check Results!"):
+def check_results():
+    if st.button("Check Results!"):
+        if (score/len(questions))*100 >= 80:
+            st.info("\nCongratulations you have successfully passed the test")
+        elif ((score/len(questions))*100 < 80) and ((score/len(questions))*100 >= 50):
+            st.info("\nYou can do better than that!\nPlease try again!")
+        else:
+            st.warning("Sorry, you have failed the test")
+        st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
 
-    if (score/len(questions))*100 >= 80:
-        st.info("\nCongratulations you have successfully passed the test")
-    else:
-        st.warning("Sorry, you have failed the test")
-
-    st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
-
+play_game()
