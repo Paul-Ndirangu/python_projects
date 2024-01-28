@@ -41,7 +41,8 @@ def check_results():
             st.info("\nYou can do better than that!\nPlease try again!")
         else:
             st.warning("Sorry, you have failed the test")
-        st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
+        st.write(f"Your score is: {str(score)}/{str(len(questions))}")
+        st.write(f"Which is: {str(round(score/len(questions)*100, 2))}%")
 
 if __name__ == "__main__":
     play_game()
