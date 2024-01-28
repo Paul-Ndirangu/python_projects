@@ -1,5 +1,7 @@
+import streamlit as st
+
 score = 0
-print('Guess the Animal!')
+st.header('Guess the Animal!')
 
 questions = ["Which bear lives at the North Pole? ", 
              "Which is the fastest land animal? ",
@@ -15,23 +17,25 @@ def check_guess(guess, answer):
     
     while still_guessing and attempt < len(answers):
         if guess.lower() == answer.lower():
-            print("Correct answer")
+            st.success("Correct answer")
             score = score + 1
             still_guessing = False
         else:
             if attempt < (len(answers)):
-                print("Sorry wrong answer. Try again")
+                st.warning("Sorry wrong answer. Try again")
             attempt = attempt + 1
         
            
 
-guess = input(questions[0])        
-check_guess(guess, answers[0])
+guess = st.text_input(questions[0])   
+
+if guess:
+    check_guess(guess, answers[0])
     
 if (score/len(questions))*100 >= 80:
-    print("\nCongratulations you have successfully passed the test")
+    st.info("\nCongratulations you have successfully passed the test")
 else:
-    print("Sorry, you have failed the test")
+    st.warning("Sorry, you have failed the test")
 
-print(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
+st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
 
