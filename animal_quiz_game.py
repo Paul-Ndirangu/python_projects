@@ -43,4 +43,5 @@ def check_results():
             st.warning("Sorry, you have failed the test")
         st.write(f"Your score is: {str(score)}/{str(len(questions))}\nWhich is: {str(score/len(questions)*100)}%")
 
-play_game()
+if __name__ == "__main__":
+    play_game()
