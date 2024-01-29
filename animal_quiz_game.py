@@ -15,6 +15,7 @@ options =[[" kangaroo", "polar bear", "shark", "panda"],
           ["panther","buffalo", "cheetah", "tiger"],
            ["elephant", "giraffe","rhino","blue whale"]]
 
+assets = ["panda.jpg", "shark.jpg", "polar_bear.jpg", "kangaroo.jpg"]
 
 answers = ['polar bear', 'cheetah', 'blue whale']
 
@@ -23,6 +24,22 @@ def ask(question, options):
     st.write(question)
     answer = st.radio("**Select answer:**", options=[option.capitalize() for option in options], horizontal=True)
     return answer
+
+def show_images(imgs):
+    c1,c2 = st.columns(2)
+    with c1:
+        st.image(imgs[0], width=350)
+    
+        st.image(imgs[1], width=350)
+    with c2:
+        st.image(imgs[2], width=200)
+  
+        st.image(imgs[3], width=200)
+
+        
+
+        
+
 
 def check_guess(guess, answer):
     global score
@@ -40,6 +57,8 @@ def play_game():
     for answer, question in enumerate(questions):
 
         guess = ask(question,options[answer] )
+        if answer == 0:
+            show_images(assets)
         
 
         if guess:
