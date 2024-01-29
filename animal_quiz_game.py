@@ -5,9 +5,13 @@ attempt = 0
 
 st.header('Guess the Animal!')
 
-questions = ["Which bear lives at the North Pole? ", 
-             "Which is the fastest land animal? ",
-             "Which is the largest animal? "]
+questions = ["Which bear lives at the North Pole? \
+                A) kangaroo B) polar bear C) shark D) panda.", 
+             "Which is the fastest land animal? \
+                A) panther B) buffalo C) cheetah D) tiger",
+             "Which is the largest animal? \
+                 A) elephant B) giraffe C) rhino D) blue whale"
+             ]
 
 answers = ['polar bear', 'cheetah', 'blue whale']
 
