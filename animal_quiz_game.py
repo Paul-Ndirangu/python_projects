@@ -6,12 +6,12 @@ score = 0
 
 
 st.header('Guess the Animal!')
-
+st.divider()
 questions = ["Which bear lives at the North Pole?" ,              
              "Which is the fastest land animal? ",
              "Which is the largest animal?  "
              ]
-options =[[" kangaroo", "polar bear", "shark", "panda."],
+options =[[" kangaroo", "polar bear", "shark", "panda"],
           ["panther","buffalo", "cheetah", "tiger"],
            ["elephant", "giraffe","rhino","blue whale"]]
 
@@ -21,7 +21,7 @@ answers = ['polar bear', 'cheetah', 'blue whale']
 def ask(question, options):
     
     st.write(question)
-    answer = st.radio("Select answer", options=options)
+    answer = st.radio("**Select answer:**", options=[option.capitalize() for option in options], horizontal=True)
     return answer
 
 def check_guess(guess, answer):
@@ -34,7 +34,7 @@ def check_guess(guess, answer):
         score = score + 1
         
     else:
-        st.warning("Sorry wrong answer. Try again")
+        st.caption("__That's definetly not the answer__")
         
 def play_game(): 
     for answer, question in enumerate(questions):
