@@ -63,8 +63,8 @@ def check_results():
             st.write(f"Your score is: **{str(score)}/{str(len(questions))}** ")
             st.write(f"Which is: **{str(round(score/len(questions)*100, 2))}%**")
     with column2:
-        if st.button("Reset"):
-            reset = True
+        if st.button(":blue[**Check Leaderboard**]"):
+           st.caption("Coming Soon")
             
 
 
