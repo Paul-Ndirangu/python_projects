@@ -2,8 +2,7 @@ import streamlit as st
 
 
 score = 0
-attempt = 0
-reset = False
+
 
 
 st.header('Guess the Animal!')
@@ -27,7 +26,7 @@ def ask(question, options):
 
 def check_guess(guess, answer):
     global score
-    global attempt
+   
    
     
     if guess.lower() == answer.lower():
@@ -36,20 +35,19 @@ def check_guess(guess, answer):
         
     else:
         st.warning("Sorry wrong answer. Try again")
-        attempt = attempt + 1
         
 def play_game(): 
     for answer, question in enumerate(questions):
 
-        guess = ask(questions[answer],options[answer] )
+        guess = ask(question,options[answer] )
         
 
-    if guess:
-        check_guess(guess, answers[answer])
+        if guess:
+            check_guess(guess, answers[answer])
     check_results()
+    
 
 def check_results():
-    global reset
     column1, column2 = st.columns([.8, .2])
     with column1:
       
