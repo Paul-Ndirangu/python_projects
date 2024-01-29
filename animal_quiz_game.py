@@ -8,15 +8,22 @@ reset = False
 
 st.header('Guess the Animal!')
 
-questions = ["Which bear lives at the North Pole? \
-                A) kangaroo B) polar bear C) shark D) panda.", 
-             "Which is the fastest land animal? \
-                A) panther B) buffalo C) cheetah D) tiger",
-             "Which is the largest animal? \
-                 A) elephant B) giraffe C) rhino D) blue whale"
+questions = ["Which bear lives at the North Pole?" ,              
+             "Which is the fastest land animal? ",
+             "Which is the largest animal?  "
              ]
+options =[[" kangaroo", "polar bear", "shark", "panda."],
+          ["panther","buffalo", "cheetah", "tiger"],
+           ["elephant", "giraffe","rhino","blue whale"]]
+
 
 answers = ['polar bear', 'cheetah', 'blue whale']
+
+def ask(question, options):
+    
+    st.write(question)
+    answer = st.radio("Select answer", options=options)
+    return answer
 
 def check_guess(guess, answer):
     global score
@@ -31,14 +38,14 @@ def check_guess(guess, answer):
         st.warning("Sorry wrong answer. Try again")
         attempt = attempt + 1
         
-def play_game():        
+def play_game(): 
     for answer, question in enumerate(questions):
 
-        guess = st.text_input(question)
+        guess = ask(questions[answer],options[answer] )
         
 
-        if guess:
-            check_guess(guess, answers[answer])
+    if guess:
+        check_guess(guess, answers[answer])
     check_results()
 
 def check_results():
@@ -63,8 +70,8 @@ def check_results():
 
 
 if __name__ == "__main__":
-    with st.("pl"):
-        play_game()
+   
+    play_game()
     
     
 
