@@ -1,9 +1,6 @@
 import streamlit as st
 
-
 score = 0
-
-
 
 st.header('Guess the Animal!')
 st.divider()
@@ -15,15 +12,17 @@ options =[[" kangaroo", "polar bear", "shark", "panda"],
           ["panther","buffalo", "cheetah", "tiger"],
            ["elephant", "giraffe","rhino","blue whale"]]
 
-assets = ["panda.jpg", "shark.jpg", "polar_bear.jpg", "kangaroo.jpg"]
+assets = ["images/panda.jpg", "images/shark.jpg", "images/polar_bear.jpg", "images/kangaroo.jpg"]
 
 answers = ['polar bear', 'cheetah', 'blue whale']
+
 
 def ask(question, options):
     
     st.write(question)
     answer = st.radio("**Select answer:**", options=[option.capitalize() for option in options], horizontal=True)
     return answer
+
 
 def show_images(imgs):
     c1,c2 = st.columns(2)
@@ -35,10 +34,6 @@ def show_images(imgs):
         st.image(imgs[2], width=200)
   
         st.image(imgs[3], width=200)
-
-        
-
-        
 
 
 def check_guess(guess, answer):
@@ -52,6 +47,7 @@ def check_guess(guess, answer):
         
     else:
         st.caption("__That's definetly not the answer__")
+   
         
 def play_game(): 
     for answer, question in enumerate(questions):
@@ -83,8 +79,6 @@ def check_results():
         if st.button(":blue[**Check Leaderboard**]"):
            st.caption("Coming Soon")
             
-
-
 
 if __name__ == "__main__":
    
