@@ -1,5 +1,6 @@
 import turtle as t 
 
+# Fucntion to draw the rectangle
 def rectangle(horizontal, vertical, color):
     t.pendown()
     t.pensize(1)
@@ -12,7 +13,8 @@ def rectangle(horizontal, vertical, color):
         t.right(90)
     t.end_fill()
     t.penup()
-    
+   
+ 
 t.penup()
 t.speed('slow')
 t.bgcolor('Dodger blue')
@@ -65,3 +67,4 @@ t.goto(-65, 135)
 rectangle(40, 5, 'black')
 
 t.hideturtle()
+
