@@ -20,7 +20,11 @@ answers = ['polar bear', 'cheetah', 'blue whale']
 def ask(question, options):
     
     st.write(question)
-    answer = st.radio("**Select answer:**", options=[option.capitalize() for option in options], horizontal=True)
+    #answer = st.radio("**Select answer:**", options=[option.capitalize() for option in options], index= 3)
+    """answer = st.checkbox("Kangaroo", key=0)
+    answer2 = st.checkbox("Polar Bear", key=1)
+    answer3 = st.checkbox("Shark", key=2)
+    answer4 = st.checkbox("Panda", key=3)"""
     return answer
 
 
