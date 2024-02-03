@@ -1,5 +1,5 @@
 # Simple Python Projects
-Having fun with hobby projects and learning more about fundamental python packages and algorithms
+Drawing a robot using a Python library called Turtle.
 
 
 [Check Demo](https://quiz-world.streamlit.app/)
@@ -8,5 +8,8 @@ Having fun with hobby projects and learning more about fundamental python packag
 
 
 ## Contributors
+[https://github.com/Paul-Ndirangu](https://github.com/Paul-Ndirangu)
+
 
 ## Contact
+[paulmwaura254@gmail.com](paulmwaura254@gmail.com)
