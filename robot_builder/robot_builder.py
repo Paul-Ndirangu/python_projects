@@ -1,6 +1,6 @@
 import turtle as t 
 
-# Fucntion to draw the rectangle
+# Function to draw the rectangle
 def rectangle(horizontal, vertical, color):
     t.pendown()
     t.pensize(1)
