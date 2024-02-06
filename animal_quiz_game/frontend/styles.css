@@ -2,3 +2,15 @@
     color: blue;
     text-align: center;
 }
+
+.main-menu{
+    color: blue;
+}
+
+.main-menu span{
+    color: black;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
