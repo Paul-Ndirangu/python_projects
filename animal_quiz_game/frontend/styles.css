@@ -1,16 +1,46 @@
+body{
+    margin:0px;
+}
+nav{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .heading{
     color: blue;
     text-align: center;
 }
 
-.main-menu{
+.logo{
     color: blue;
 }
 
-.main-menu span{
+.logo span{
     color: black;
 }
-.logo{
-    width: 100px;
-    height: 100px;
+
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(257, 48%, 60%);
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}d
+
+.navbar a:hover{
+    background-color: hsl(257, 65%, 79%);
+}
+
+.navbar li {
+    float: left;
 }
